@@ -1,4 +1,3 @@
-# https://shardingsphere.apache.org/index_zh.html
 mode:
   # 运行模式类型。可选配置：内存模式 Memory、单机模式 Standalone、集群模式 Cluster - 目前为单机模式
   type: Standalone
@@ -49,7 +48,6 @@ rules:
         type: INLINE
         props:
           algorithm-expression: ds_$->{Math.abs(id.hashCode()) % 2}
-
       # 表-路由算法
       course_inline:
         type: INLINE

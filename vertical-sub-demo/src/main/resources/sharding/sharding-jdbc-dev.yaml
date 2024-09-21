@@ -33,7 +33,7 @@ rules:
             shardingAlgorithmName: course_inline
     # 路由算法
     shardingAlgorithms:
-      # 库-路由算法 2是两个库，库的数量。库的数量用哈希模2来计算。
+      # 库-路由算法
       database_inline:
         type: INLINE
         props:

@@ -2,5 +2,6 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/horizontal-sub-demo/doc/database_table.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/read-write-separation/src/main/resources/mapper/Course1Mapper.xml" dialect="GenericSQL" />
   </component>
 </project>
