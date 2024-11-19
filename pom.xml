@@ -22,7 +22,7 @@
     <properties>
         <java.version>17</java.version>
         <mybatis-plus-boot-starter.version>3.5.9</mybatis-plus-boot-starter.version>
-        <shardingsphere-jdbc.version>5.5.0</shardingsphere-jdbc.version>
+        <shardingsphere-jdbc.version>5.5.1</shardingsphere-jdbc.version>
     </properties>
 
     <build>
