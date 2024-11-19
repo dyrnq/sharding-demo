@@ -16,7 +16,7 @@
     <modules>
         <module>horizontal-sub-demo</module>
         <module>vertical-sub-demo</module>
-        <module>vertical-sub-demo</module>
+        <!-- <module>vertical-sub-demo</module> -->
         <module>read-write-separation</module>
     </modules>
     <properties>
