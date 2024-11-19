@@ -28,7 +28,7 @@ dataSources:
     minPoolSize: 5
 rules:
 - !READWRITE_SPLITTING
-  dataSources:
+  dataSourceGroups:
     readwrite_ds_0:
       writeDataSourceName: write_ds_0
       readDataSourceNames:
@@ -42,7 +42,7 @@ rules:
 - !SHARDING
   tables:
     course:
-      actualDataNodes: readwrite_ds_0.course_$->{1..4}
+      actualDataNodes: readwrite_ds_0.course_$->{0..4}
       tableStrategy:
         standard:
           shardingColumn: id
