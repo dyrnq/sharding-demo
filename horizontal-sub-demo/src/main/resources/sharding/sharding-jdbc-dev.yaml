@@ -36,7 +36,7 @@ rules:
     # 表的路由
     tables:
       course:
-        actualDataNodes: ds_$->{0..1}.course_$->{1..4}
+        actualDataNodes: ds_$->{0..1}.course_$->{0..4}
         tableStrategy:
           standard:
             shardingColumn: id
