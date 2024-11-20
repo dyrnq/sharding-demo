@@ -49,7 +49,7 @@
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>shardingsphere-jdbc</artifactId>
-            <version>${shardingsphere-jdbc.version}</version>
+            <version>${shardingsphere.version}</version>
         </dependency>
 
         <dependency>
