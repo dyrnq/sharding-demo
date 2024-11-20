@@ -23,6 +23,7 @@
         <java.version>17</java.version>
         <mybatis-plus-boot-starter.version>3.5.9</mybatis-plus-boot-starter.version>
         <shardingsphere.version>5.5.1</shardingsphere.version>
+        <hutool.version>5.8.33</hutool.version>
     </properties>
 
     <build>

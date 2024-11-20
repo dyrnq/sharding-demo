@@ -1,6 +1,10 @@
 package com.ryan.demo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.ryan.demo.Utils;
 import com.ryan.demo.domain.Course;
 import com.ryan.demo.service.CourseService;
 import com.ryan.demo.mapper.CourseMapper;
@@ -14,6 +18,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course>
     implements CourseService {
+
+    public Page<Course> pageCourse(String start, String end) {
+        Page<Course> pager = new Page<>(1, 20);
+
+        LambdaQueryWrapper<Course> lambdaQuery = Wrappers.lambdaQuery();
+        lambdaQuery.between(Course::getCreatedAt, Utils.getTimestamp(start), Utils.getEndOfDayTimestamp(end));
+        Page<Course> result = this.page(pager, lambdaQuery);
+        return result;
+    }
 
 }
 

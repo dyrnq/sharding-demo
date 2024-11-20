@@ -1,5 +1,7 @@
 package com.ryan.demo.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ryan.demo.domain.Course;
 import com.ryan.demo.service.CourseService;
 import jakarta.annotation.Resource;
@@ -33,6 +35,11 @@ public class CourseController {
     @GetMapping("/all")
     public List<Course> getAll() {
         return service.list();
+    }
+
+    @GetMapping("/page")
+    public IPage<Course> page() {
+        return service.pageCourse("2024-11-20 08:21:37","2024-11-20 08:21:38");
     }
 
 }

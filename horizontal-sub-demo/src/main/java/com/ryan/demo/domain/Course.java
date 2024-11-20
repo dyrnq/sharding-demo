@@ -1,9 +1,11 @@
 package com.ryan.demo.domain;
 
-import com.baomidou.mybatisplus.annotation.TableName;
+
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 
 /**
@@ -32,4 +34,5 @@ public class Course implements Serializable {
      */
     private Integer status;
 
+    private Date createdAt;
 }

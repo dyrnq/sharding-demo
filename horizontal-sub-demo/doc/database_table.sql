@@ -76,3 +76,16 @@ create table course_4
     name   varchar(50),
     status TINYINT
 );
+use course_db_1;
+ALTER TABLE course_0 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_1 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_2 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_3 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_4 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+
+use course_db_2;
+ALTER TABLE course_0 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_1 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_2 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_3 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
+ALTER TABLE course_4 ADD COLUMN created_at datetime(6) DEFAULT CURRENT_TIMESTAMP(6) COMMENT 'create time';
