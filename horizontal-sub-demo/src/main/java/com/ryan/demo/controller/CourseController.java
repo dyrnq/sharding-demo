@@ -7,11 +7,9 @@ import com.ryan.demo.domain.Course;
 import com.ryan.demo.service.CourseService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -33,12 +31,12 @@ public class CourseController {
         course.setName("java");
         course.setStatus(0);
         if (createdAt != null) {
-            log.info("createdAt:{}", createdAt);
+            log.info("createdAt:{}",createdAt);
             DateTime dt = DateUtil.parse(createdAt,
-                    "yyyy-MM-dd HH:mm:ss",
-                    "yyyy-MM-dd HH:mm:ss.SSS",
-                    "yyyy-MM-dd HH:mm:ss.SSSSSS"
-            );
+                     "yyyy-MM-dd HH:mm:ss",
+                     "yyyy-MM-dd HH:mm:ss.SSS",
+                     "yyyy-MM-dd HH:mm:ss.SSSSSS"
+                );
             course.setCreatedAt(dt);
         }
         service.save(course);
@@ -58,5 +56,8 @@ public class CourseController {
     public IPage<Course> page() {
         return service.pageCourse("2024-11-20 08:21:37","2024-11-20 08:21:38");
     }
-
+    @GetMapping("/page/jdbc")
+    public IPage<Course> pageJdbc() {
+        return service.pageCourseByJDBC("2024-11-20 08:21:37","2024-11-20 08:21:38");
+    }
 }

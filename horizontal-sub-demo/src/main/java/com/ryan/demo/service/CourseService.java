@@ -11,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface CourseService extends IService<Course> {
     Page<Course> pageCourse(String start, String end);
+    Page<Course> pageCourseByJDBC(String start, String end);
 }
