@@ -1,7 +1,14 @@
 # https://shardingsphere.apache.org/index_zh.html
 mode:
   # 运行模式类型。可选配置：内存模式 Memory、单机模式 Standalone、集群模式 Cluster - 目前为单机模式
-  type: Standalone
+  type: Cluster
+  repository:
+    type: ZooKeeper
+    props:
+      namespace: governance/readwrite
+      server-lists: 192.168.88.131:2181
+      retryIntervalMilliseconds: 500
+      timeToLiveSeconds: 60
 
 dataSources:
   write_ds_0:

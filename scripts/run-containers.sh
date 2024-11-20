@@ -168,6 +168,30 @@ docker exec mysql_slave sh -c "export MYSQL_PWD=666666; mysql -u root -e 'SHOW S
 
 }
 
+fun_install_zookeeper(){
+docker rm -f some-zookeeper || true
+mkdir -p $HOME/var/lib/zookeeper/some-zookeeper/{data,datalog}
+docker run \
+-d \
+--network mynet \
+--name some-zookeeper \
+--restart always \
+-p 2181:2181 \
+-e ZOO_4LW_COMMANDS_WHITELIST=* \
+-e JVMFLAGS="-Xmx1024m" \
+-v $HOME/var/lib/zookeeper/some-zookeeper/data:/data \
+-v $HOME/var/lib/zookeeper/some-zookeeper/datalog:/datalog \
+zookeeper:3.8.4
+
+docker rm -f zooweb|| true
+docker run -d \
+--network mynet \
+--name zooweb \
+--restart always \
+-p 39000:9000 \
+elkozmon/zoonavigator:latest
+}
+
 
 
 
@@ -184,3 +208,6 @@ fun_post_mysql_slave
 echo "begin to setup mysql master and slave"
 fun_setup_master
 fun_setup_slave
+
+echo "begin to install zookeeper"
+fun_install_zookeeper
