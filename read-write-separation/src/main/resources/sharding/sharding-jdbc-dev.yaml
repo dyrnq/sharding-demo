@@ -14,7 +14,7 @@ dataSources:
   write_ds_0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://192.168.88.131:3306/course_db_1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
+    jdbcUrl: jdbc:mysql://192.168.88.131:3306/course_db_1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     username: root
     password: 666666
     connectionTimeoutMilliseconds: 30000
@@ -25,7 +25,7 @@ dataSources:
   read_ds_0:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    jdbcUrl: jdbc:mysql://192.168.88.131:3307/course_db_1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
+    jdbcUrl: jdbc:mysql://192.168.88.131:3307/course_db_1?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
     username: root
     password: 666666
     connectionTimeoutMilliseconds: 30000
