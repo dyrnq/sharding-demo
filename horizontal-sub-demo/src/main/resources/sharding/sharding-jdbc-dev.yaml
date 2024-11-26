@@ -48,6 +48,12 @@ rules:
           standard:
             shardingColumn: id
             shardingAlgorithmName: course_inline
+      test_order:
+        actualDataNodes: ds_0.test_order_$->{202401..203001}
+        tableStrategy:
+          standard:
+            shardingColumn: create_time
+            shardingAlgorithmName: day_interval
     # 路由算法
     shardingAlgorithms:
       # 库-路由算法 2是两个库，库的数量。库的数量用哈希模2来计算。
@@ -60,6 +66,15 @@ rules:
         type: INLINE
         props:
           algorithm-expression: course_$->{(id.hashCode() ^ (id.hashCode()) >>> 16) & (4 - 1)}
+      day_interval:
+        type: INTERVAL
+        props:
+          datetime-pattern: 'yyyy-MM-dd HH:mm:ss.SSS'
+          datetime-lower: '2024-01-01 00:00:00.000'
+          datetime-upper: '2029-01-01 00:00:00.000'
+          sharding-suffix-pattern: _yyyyMM
+          datetime-interval-amount: 1
+          datetime-interval-unit: months
 
 props:
   # 是否在日志中打印 SQL。
