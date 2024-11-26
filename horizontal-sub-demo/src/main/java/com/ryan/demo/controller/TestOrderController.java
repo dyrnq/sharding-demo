@@ -32,7 +32,7 @@ public class TestOrderController {
     public void add(String createdAt) {
         TestOrder item = new TestOrder();
         long number = TsidCreator.getTsid().toLong();
-        item.setTestId(number+"");
+        item.setOrderId(number+"");
         item.setCreateTime(LocalDateTime.now());
         if (createdAt != null) {
             log.info("createdAt:{}",createdAt);

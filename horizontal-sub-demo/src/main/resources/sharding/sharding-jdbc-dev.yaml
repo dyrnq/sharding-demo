@@ -53,7 +53,7 @@ rules:
         tableStrategy:
           standard:
             shardingColumn: create_time
-            shardingAlgorithmName: day_interval
+            shardingAlgorithmName: default_interval
     # 路由算法
     shardingAlgorithms:
       # 库-路由算法 2是两个库，库的数量。库的数量用哈希模2来计算。
@@ -66,7 +66,7 @@ rules:
         type: INLINE
         props:
           algorithm-expression: course_$->{(id.hashCode() ^ (id.hashCode()) >>> 16) & (4 - 1)}
-      day_interval:
+      default_interval:
         type: INTERVAL
         props:
           datetime-pattern: 'yyyy-MM-dd HH:mm:ss.SSS'
